@@ -1,0 +1,152 @@
+.logo {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    margin-bottom: 15px;
+}
+
+.brandLogo {
+    margin-right: 3rem;
+}
+
+
+.navBar {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navMenu {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin-left: 5rem;
+
+}
+
+.navBarItems {
+    color: white;
+    margin: 8px;
+}
+
+.navBarItems:hover {
+    color: gray;
+}
+
+.searchBar {
+    width: 350px;
+}
+
+.login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: black;
+}
+
+.form {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    background-color: white;
+    padding: 6rem;
+    box-shadow: 0 4px 10px 10px rgba(137, 137, 137, 0.2), 0 6px 20px 0 rgba(143, 143, 143, 0.19);
+
+}
+
+.input {
+    width: 350px;
+}
+
+.login-btn {
+    background-color: black;
+    color: white;
+    width: 350px;
+    height: 3rem;
+}
+
+
+
+.card-description {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    color: black;
+    margin: 30px;
+    margin-top: 80px;
+
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    margin-top: 100px;
+
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.products-container {
+    width: 100%;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    align-items: center;
+}
+
+.detailed-container {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0 5rem;
+}
+
+.detailed-container-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 18%;
+
+}
+
+.checkoutForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    height: 30vh;
+    margin-top: 100px;
+    background-color: black;
+    color: rgb(159, 159, 159);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;  
+
+}
