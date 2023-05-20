@@ -18,11 +18,13 @@ import { Link } from 'react-router-dom';
 import Checkout from './Checkout';
 // import { Link } from 'react-router-dom';
 
-const Header = ({ setToken }) => {
+const Header = ({ handleSearch, setToken }) => {
     const handleLogout = () => {
-        setToken("");
+        setToken();
         localStorage.clear();
     };
+
+
 
     // const handleSearchChange = (e) => {
     //     setSearchQuery(e.target.value);
@@ -49,7 +51,9 @@ const Header = ({ setToken }) => {
     };
 
     const handleCheckout = () => {
-        return (< Checkout />)
+        return (
+            < Checkout />
+        )
     }
     return (
         <>
@@ -59,15 +63,15 @@ const Header = ({ setToken }) => {
 
                         <img className="logo" src="https://techinfini.in/wp-content/uploads/2014/10/ecommerce-white-icon.png" />
 
-                        <Navbar.Brand className='brandLogo' style={{ color: "white", fontSize: "23px" }} href="#">Shopping App</Navbar.Brand>
+                        <Navbar.Brand className='brandLogo' style={{ color: "white", fontSize: "27px", fontWeight: "600" }} href="#">Shopping App</Navbar.Brand>
                     </div>
                     <Form className='searchBar'>
                         <Form.Control
                             type="search"
                             placeholder="Search"
                             aria-label="Search"
-                        // value={searchQuery}
-                        // onChange={handleSearchChange}
+                            // value={searchQuery}
+                            onChange={handleSearch}
 
                         />
                     </Form>

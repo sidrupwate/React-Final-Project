@@ -7,11 +7,12 @@ import { selectedProducts, removeSelectedProducts, addToCart } from "../redux/ac
 import "../styles/Styles.css";
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
+import StarRateIcon from '@mui/icons-material/StarRate';
 import { Button } from "react-bootstrap";
 
 const ProductDetails = () => {
     const product = useSelector((state) => state.product);
-    const { image, title, price, description, category } = product;
+    const { image, title, price, description, category, rating, rate } = product;
     const { productID } = useParams();
     const dispatch = useDispatch();
 
@@ -52,7 +53,7 @@ const ProductDetails = () => {
                         <h2>
                             <a>$ {price}</a>
                         </h2>
-                        <h3>{category}</h3>
+                        <h3>{category}<span style={{marginLeft:"1rem"}}>{rating.rate}<StarRateIcon style={{ marginBottom: "7px" }} /></span></h3>
                         <p>{description}</p>
 
                         <Button variant="contained" className="login-btn" style={{ color: "white", backgroundColor: "black" }} onClick={() => add(product)}>Add to Cart</Button>
@@ -64,7 +65,7 @@ const ProductDetails = () => {
 
 
             }
-        </div>
+        </div >
     )
 }
 

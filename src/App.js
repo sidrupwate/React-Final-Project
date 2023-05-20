@@ -16,9 +16,8 @@ function App() {
     <>
       <div>
         {token ? <><Header setToken={setToken} />
-
           <Routes>
-            <Route path="/" exact element={<ProductList />} />
+            <Route path="/" exact element={<ProductList setToken={setToken} />} />
             <Route path="/product/:productID" element={<ProductDetails />} />
             <Route path="/checkout/" element={<Checkout />} />
           </Routes>

@@ -6,7 +6,7 @@ import axios from "axios";
 import Footer from "./Footer";
 // import Carousels from "./Carousels";
 
-const ProductList = () => {
+const ProductList = ({ setToken }) => {
     const products = useSelector((state) => state);
     const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const ProductList = () => {
         <>
             {/* <Carousels /> */}
             <div className="products-container">
-                <ProductComponent />
+                <ProductComponent setToken={setToken} />
             </div>
             <Footer />
         </>
