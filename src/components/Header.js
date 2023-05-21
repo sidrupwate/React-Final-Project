@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Button from 'react-bootstrap/Button';
 // import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -12,10 +12,12 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { useSelector } from 'react-redux';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Checkout from './Checkout';
+import { removeFromCart } from '../redux/actions/productActions';
 // import { Link } from 'react-router-dom';
 
 const Header = ({ handleSearch, setToken }) => {
@@ -30,16 +32,18 @@ const Header = ({ handleSearch, setToken }) => {
     //     setSearchQuery(e.target.value);
     // };
 
+    const [price, setPrice] = useState(0);
     const [showCheckout, setShowCheckout] = useState(false);
+    // console.log(price);
 
     const handleProceedToBuy = () => {
         setShowCheckout(true);
-
     };
 
-
     const getData = useSelector((state) => state.Cart.cart);
-    console.log(getData);
+    // console.log(getData);
+
+    const dispatch = useDispatch();
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -47,14 +51,24 @@ const Header = ({ handleSearch, setToken }) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
+        
         setAnchorEl(null);
     };
 
-    const handleCheckout = () => {
-        return (
-            < Checkout />
-        )
+    const remove = (id) => {
+        dispatch(removeFromCart(id))
     }
+
+    const total = () => {
+        let price = 0;
+        getData.map((products, k) => {
+            price = products.price + price
+        });
+        setPrice(price);
+    };
+    useEffect(()=>{
+        total();
+    }, [total])
     return (
         <>
             <div className='navBar'>
@@ -122,29 +136,37 @@ const Header = ({ handleSearch, setToken }) => {
                                                                     <>
                                                                         <tr>
                                                                             <td>
+
                                                                                 <img src={e.image} style={{ width: "5rem", height: "5rem" }} />
+
                                                                             </td>
                                                                             <td>
                                                                                 <p>{e.title}</p>
                                                                                 <p>Price:${e.price}</p>
-                                                                                <p style={{ color: "red", fontSize: 20, cursor: "pointer" }}>
-                                                                                    <i className='fas fa-trash'></i>
-                                                                                </p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <span style={{ color: "red", cursor: "pointer" }} onClick={() => remove(e.id)}>
+                                                                                    <DeleteIcon />
+                                                                                </span>
                                                                             </td>
                                                                         </tr>
                                                                     </>
                                                                 )
                                                             })
                                                         }
+                                                        <p className='text-center'>
+                                                            Total: $ {price}
+                                                        </p>
                                                     </tbody>
 
                                                 </Table>
                                                 {showCheckout ? (
                                                     <Checkout />
                                                 ) : (
-                                                    <Link to={/checkout/}>
-                                                        <Button style={{ backgroundColor: "black", width: "100%" }} onClick={handleProceedToBuy}>Proceed to Buy</Button>
+                                                    <Link to={"/checkout"}>
+                                                        <Button style={{ backgroundColor: "black", width: "100%" }} onClick={handleClose}>Proceed to Buy</Button>
                                                     </Link>
+
                                                 )}
 
                                             </div> :

@@ -26,4 +26,12 @@ export const addToCart = (product) => {
     };
 };
 
+
+export const removeFromCart = (id) => {
+    return {
+        type: ActionTypes.REMOVE_FROM_CART,
+        payload: id,
+    };
+};
+
 export default setProducts;

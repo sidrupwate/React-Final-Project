@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Checkout from "./components/Checkout";
 
 function App() {
+
   const [token, setToken] = useState(localStorage.getItem("userToken") ?? null);
   return (
     <>
@@ -19,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" exact element={<ProductList setToken={setToken} />} />
             <Route path="/product/:productID" element={<ProductDetails />} />
-            <Route path="/checkout/" element={<Checkout />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </> :
           <Login token={token} setToken={setToken} />}

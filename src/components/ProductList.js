@@ -4,6 +4,7 @@ import ProductComponent from "./ProductComponent";
 import setProducts from "../redux/actions/productActions";
 import axios from "axios";
 import Footer from "./Footer";
+import Carousels from "./Carousels";
 // import Carousels from "./Carousels";
 
 const ProductList = ({ setToken }) => {
