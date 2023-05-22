@@ -3,6 +3,7 @@ import "../styles/Styles.css";
 import { Button, TextField } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
+import { Col } from 'react-bootstrap';
 
 class Checkout extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class Checkout extends React.Component {
             this.setState({ showAlert: true }, () => {
                 setTimeout(() => {
                     window.location.reload();
-                }, 1000);
+                }, 2000);
             });
         } else {
             alert('Please select a payment method.');
@@ -55,6 +56,9 @@ class Checkout extends React.Component {
                         <TextField className="input" id="outlined-basic" label="Email" variant="outlined" type="email" required onChange={(e) => this.handleChange(e)} />
                         <TextField className="input" id="outlined-basic" label="Address" variant="outlined" type="text" required onChange={(e) => this.handleChange(e)} />
                     </form>
+                    <Col sm={1}>
+                        <div className="vl"></div>
+                    </Col>
                     <div className='checkoutForm'>
                         <h2>Select a Payment Method</h2>
                         <label>

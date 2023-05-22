@@ -51,7 +51,7 @@ const Header = ({ handleSearch, setToken }) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
-        
+
         setAnchorEl(null);
     };
 
@@ -66,7 +66,7 @@ const Header = ({ handleSearch, setToken }) => {
         });
         setPrice(price);
     };
-    useEffect(()=>{
+    useEffect(() => {
         total();
     }, [total])
     return (

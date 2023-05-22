@@ -91,8 +91,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
-    margin-top: 100px;
+    padding: 2rem 2rem 0 3rem;
+    margin: 8rem 5rem -3rem 5rem;
+    box-shadow: 0 4px 10px 0 rgba(137, 137, 137, 0.2), 0 6px 20px 0 rgba(215, 215, 215, 0.19);
 
 }
 
@@ -147,6 +148,12 @@ img {
     padding: 6rem;
 
 
+}
+
+.vl {
+    border-left: 1px solid lightgray;
+    height: 400px;
+    margin-left: 4rem;
 }
 
 .footer {
