@@ -11,7 +11,7 @@ import "../styles/Styles.css";
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 import StarRateIcon from "@mui/icons-material/StarRate";
-import { Button } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 
 
 const ProductDetails = () => {
@@ -47,7 +47,7 @@ const ProductDetails = () => {
         <div className="detailed-container">
             {Object.keys(product).length === 0 ? (
                 <div>
-                    <Box sx={{ display: "flex" }}>
+                    <Box sx={{ display: "flex", marginTop: "200px" }}>
                         <CircularProgress />
                     </Box>
                 </div>
@@ -56,6 +56,9 @@ const ProductDetails = () => {
                     <div>
                         <img src={image} alt={title} />
                     </div>
+                    <Col sm={1}>
+                        <div className="vl"></div>
+                    </Col>
                     <div className="detailed-container-desc">
                         <h1>{title}</h1>
                         <h2>

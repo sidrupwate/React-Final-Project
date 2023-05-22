@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "../styles/Styles.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ProductComponent = ({ setToken }) => {
     const products = useSelector((state) => state.allProducts.products);
@@ -20,12 +22,19 @@ const ProductComponent = ({ setToken }) => {
     const renderList = filteredProducts.map((product) => {
         const { id, title, image, price, category } = product;
         return (
-            <>
+            <>{Object.keys(products).length === 0 ? (
+                <div>
+                    <Box sx={{ display: "flex", marginTop: "500px" }}>
+                        <CircularProgress />
+                    </Box>
+                </div>
+            ) : (
                 <div className="card" key={id}>
                     <Link to={`/product/${id}`}>
                         <div>
                             <img src={image} alt="#" />
                         </div>
+                        <hr style={{ marginTop: "2rem" }} />
                     </Link>
                     <div className="card-description">
                         <h5>{title}</h5>
@@ -53,6 +62,7 @@ const ProductComponent = ({ setToken }) => {
                         </div>
                     </div>
                 </div>
+            )}
             </>
         );
     });

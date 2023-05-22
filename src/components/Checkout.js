@@ -31,7 +31,7 @@ class Checkout extends React.Component {
             this.setState({ showAlert: true }, () => {
                 setTimeout(() => {
                     window.location.reload();
-                }, 2000);
+                }, 1000);
             });
         } else {
             alert('Please select a payment method.');
@@ -50,6 +50,9 @@ class Checkout extends React.Component {
                     )}
                 </div>
                 <div className='checkout'>
+                    <Col sm={1}>
+                        <div className="vl"></div>
+                    </Col>
                     <form className='checkoutForm'>
                         <h2>Shipping Details</h2>
                         <TextField className="input" id="outlined-basic" label="Name" variant="outlined" type="name" required onChange={(e) => this.handleChange(e)} />
@@ -75,6 +78,9 @@ class Checkout extends React.Component {
                         </label>
                         <Button variant="contained" className="login-btn" style={{ color: "white", backgroundColor: "black" }} onClick={this.handleSubmit}>Place Order</Button>
                     </div>
+                    <Col sm={1}>
+                        <div className="vl"></div>
+                    </Col>
                 </div>
             </>
         );
