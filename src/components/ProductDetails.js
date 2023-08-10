@@ -12,9 +12,10 @@ import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import { Button, Col } from "react-bootstrap";
+import Header from "./Header";
 
 
-const ProductDetails = () => {
+const ProductDetails = ({setToken}) => {
     const product = useSelector((state) => state.product);
     const { image, title, price, description, category, rating, rate } = product;
     const { productID } = useParams();
@@ -44,57 +45,60 @@ const ProductDetails = () => {
     };
 
     return (
-        <div className="detailed-container">
-            {Object.keys(product).length === 0 ? (
-                <div>
-                    <Box sx={{ display: "flex", marginTop: "200px" }}>
-                        <CircularProgress />
-                    </Box>
-                </div>
-            ) : (
-                <div className="detailed-container">
+        <>
+            <Header setToken={setToken} />
+            <div className="detailed-container">
+                {Object.keys(product).length === 0 ? (
                     <div>
-                        <img src={image} alt={title} />
+                        <Box sx={{ display: "flex", marginTop: "200px" }}>
+                            <CircularProgress />
+                        </Box>
                     </div>
-                    <Col sm={1}>
-                        <div className="vl"></div>
-                    </Col>
-                    <div className="detailed-container-desc">
-                        <h1>{title}</h1>
-                        <h2>
-                            <a>$ {price}</a>
-                        </h2>
-                        <h3>
-                            {category}
-                            <span
-                                style={{
-                                    marginLeft: "1rem",
-                                    backgroundColor: "green",
-                                    color: "white",
-                                    padding: "1px 7px",
-                                    borderRadius: "15px",
-                                    fontSize: "18px",
-                                }}
-                            >
-                                {rating.rate}
-                                <StarRateIcon style={{ marginBottom: "7px" }} />
-                            </span>
-                        </h3>
-                        <p>{description}</p>
+                ) : (
+                    <div className="detailed-container">
+                        <div>
+                            <img src={image} alt={title} />
+                        </div>
+                        <Col sm={1}>
+                            <div className="vl"></div>
+                        </Col>
+                        <div className="detailed-container-desc">
+                            <h1>{title}</h1>
+                            <h2>
+                                <a>$ {price}</a>
+                            </h2>
+                            <h3>
+                                {category}
+                                <span
+                                    style={{
+                                        marginLeft: "1rem",
+                                        backgroundColor: "green",
+                                        color: "white",
+                                        padding: "1px 7px",
+                                        borderRadius: "15px",
+                                        fontSize: "18px",
+                                    }}
+                                >
+                                    {rating.rate}
+                                    <StarRateIcon style={{ marginBottom: "7px" }} />
+                                </span>
+                            </h3>
+                            <p>{description}</p>
 
-                        <Button
-                            variant="contained"
-                            className="login-btn"
-                            style={{ color: "white", backgroundColor: "black" }}
-                            onClick={() => add(product)}
-                            disabled={isAddedToCart}
-                        >
-                            {isAddedToCart ? "Added" : "Add to Cart"}
-                        </Button>
+                            <Button
+                                variant="contained"
+                                className="login-btn"
+                                style={{ color: "white", backgroundColor: "black" }}
+                                onClick={() => add(product)}
+                                disabled={isAddedToCart}
+                            >
+                                {isAddedToCart ? "Added" : "Add to Cart"}
+                            </Button>
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </>
     );
 };
 

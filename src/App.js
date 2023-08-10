@@ -12,15 +12,15 @@ import Checkout from "./components/Checkout";
 
 function App() {
 
-  const [token, setToken] = useState(localStorage.getItem("userToken") ?? null);
+  const [token, setToken] = useState(localStorage.getItem("userToken") || null);
   return (
     <>
       <div>
-        {token ? <><Header setToken={setToken} />
+        {token ? <>
           <Routes>
             <Route path="/" exact element={<ProductList setToken={setToken} />} />
-            <Route path="/product/:productID" element={<ProductDetails />} />
-            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/product/:productID" element={<ProductDetails setToken={setToken} />} />
+            <Route path="/checkout" element={<Checkout setToken={setToken} />} />
           </Routes>
         </> :
           <Login token={token} setToken={setToken} />}

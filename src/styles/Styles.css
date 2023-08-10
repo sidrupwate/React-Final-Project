@@ -99,9 +99,9 @@
 }
 
 .card:hover {
-    transform: scale(1.1);
+
     transition: transform 150ms ease-in-out;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.19);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.19); 
 }
 
 .products-container {
@@ -116,6 +116,11 @@ img {
     width: 250px;
     height: 250px;
     align-items: center;
+}
+
+img:hover {
+    transition: transform 150ms ease-in-out, box-shadow 150ms ease-in-out; /* Add box-shadow transition */
+    transform: scale(1.1); /* Scale the image on hover for radial effect */
 }
 
 .detailed-container {
@@ -180,13 +185,185 @@ img {
     margin-bottom: 1rem;
 }
 
-/* .alert {
-    background-color: #d7f8d8;
-    color: #721c24;
-    padding: 0.75rem;
-    border: 1px solid #f5c6cb;
-    border-radius: 4px;
-    width: 300px;
-    text-align: center;
-    font-weight: bold;
-} */
+@media screen and (max-width: 480px) {
+    .logo {
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .brandLogo {
+        margin-right: 3rem;
+    }
+    
+    
+    .navBar {
+        width: 140%;
+        position: fixed;
+        background-color: black;
+        display: flex;
+        justify-content:center;
+    }
+    
+    .navMenu {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-left: 0;
+    
+    }
+    
+    .navBarItems {
+        color: white;
+        margin: 8px;
+    }
+    
+    .navBarItems:hover {
+        color: gray;
+    }
+    
+    .searchBar {
+        width: 350px;
+    }
+    
+    .login {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        background-color: black;
+    }
+    
+    .form {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        align-items: center;
+        background-color: white;
+        padding: 6rem;
+        box-shadow: 0 4px 10px 10px rgba(137, 137, 137, 0.2), 0 6px 20px 0 rgba(143, 143, 143, 0.19);
+    
+    }
+    
+    .input {
+        width: 350px;
+    }
+    
+    .login-btn {
+        background-color: black;
+        color: white;
+        width: 350px;
+        height: 3rem;
+    
+    }
+    
+    
+    
+    .card-description {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        color: black;
+        margin: 30px;
+        /* margin-top: 80px; */
+    
+    }
+    
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 2rem 0 3rem;
+        margin: 8rem 5rem -3rem 5rem;
+        box-shadow: 0 4px 10px 0 rgba(120, 120, 120, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    
+    }
+    
+    .card:hover {
+        transform: scale(1.1);
+        transition: transform 150ms ease-in-out;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.19);
+    }
+    
+    .products-container {
+        width: 100%;
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+    
+    img {
+        width: 250px;
+        height: 250px;
+        align-items: center;
+    }
+    
+    .detailed-container {
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin: 0 5rem;
+    }
+    
+    .detailed-container-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 0 10%;
+    
+    }
+    
+    .checkout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px 10px rgba(137, 137, 137, 0.2), 0 6px 20px 0 rgba(143, 143, 143, 0.19);
+        /* border: 1px solid gray; */
+    }
+    
+    .checkoutForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        background-color: white;
+        padding: 6rem;
+    
+    
+    }
+    
+    .vl {
+        border-left: 1px solid lightgray;
+        height: 400px;
+        margin-left: 4rem;
+    
+    }
+    
+    .footer {
+        height: 30vh;
+        margin-top: 100px;
+        background-color: black;
+        color: rgb(159, 159, 159);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 600;
+    
+    }
+    
+    .alert-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+  }
