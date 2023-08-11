@@ -77,7 +77,7 @@ const Header = ({ handleSearch, setToken }) => {
 
                         <img className="logo" src="https://techinfini.in/wp-content/uploads/2014/10/ecommerce-white-icon.png" />
 
-                        <Navbar.Brand className='brandLogo' style={{ color: "white", fontSize: "27px", fontWeight: "600" }} href="#">Shopping App</Navbar.Brand>
+                        <Navbar.Brand className='brandLogo' style={{ color: "white", fontWeight: "600" }} href="#">Shopping App</Navbar.Brand>
                     </div>
                     <Form className='searchBar'>
                         <Form.Control
@@ -106,7 +106,7 @@ const Header = ({ handleSearch, setToken }) => {
                                         aria-controls={open ? 'basic-menu' : undefined}
                                         aria-haspopup="true"
                                         aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}><ShoppingCartIcon style={{ color: "white", margin: "5px", fontSize: "2rem", cursor: "pointer" }} /></Badge>
+                                        onClick={handleClick}><ShoppingCartIcon style={{ color: "white", margin: "5px", fontSize: "2rem", cursor: "pointer" }} className='cartIcon' /></Badge>
                                 </div>
                                 <Menu
                                     id="basic-menu"
