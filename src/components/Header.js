@@ -73,10 +73,7 @@ const Header = ({ handleSearch, setToken }) => {
         <>
             <div className='navBar'>
                 <Navbar>
-                    <div className='brandLogo'>
-
-                        <img className="logo" src="https://techinfini.in/wp-content/uploads/2014/10/ecommerce-white-icon.png" />
-
+                    <div style={{padding:"1rem"}} className='brandLogo'>
                         <Navbar.Brand className='brandLogo' style={{ color: "white", fontWeight: "600" }} href="#">Shopping App</Navbar.Brand>
                     </div>
                     <Form className='searchBar'>

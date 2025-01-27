@@ -4,8 +4,8 @@ import { Button, TextField } from '@mui/material';
 import axios from "axios";
 
 const Login = ({ token, setToken }) => {
-    const [UserName, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [UserName, setUsername] = useState("mor_2314");
+    const [password, setPassword] = useState("83r5^_");
     const [error, setError] = useState("");
 
     const handleLogin = () => {
